@@ -16,6 +16,6 @@ public class HDT6 {
     public static void main(String[] args) throws IOException {
         Datos datos = new Datos();
         datos.LeerDatos();
-        
+        int i = 0;
     }
 }

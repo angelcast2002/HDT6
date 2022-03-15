@@ -19,7 +19,7 @@ public class Datos {
              Datos.add(cadena);
 
         }
-
+        int a = 0;
         b.close();
         return Datos;
     } 
