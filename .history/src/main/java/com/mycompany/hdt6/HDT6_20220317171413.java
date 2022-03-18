@@ -31,15 +31,15 @@ public class HDT6 {
 
         switch (key) {
             case 1:
-                map.HashMap();
+                map.HashMap(Datos);
                 break;
                 
             case 2:
-                map.TreeMap();
+                map.TreeMap(Datos);
                 break;
 
             case 3:
-                map.LinkedHashMap();
+                map.LinkedHashMap(Datos);
                 break;
 
             default:
@@ -48,11 +48,11 @@ public class HDT6 {
 
         }
 
-        // while (salir == false) {
+        while (salir == false) {
 
             
             
-        // }
+        }
 
         
         

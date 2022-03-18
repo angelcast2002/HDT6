@@ -26,20 +26,19 @@ public class HDT6 {
         ArrayList <String> Datos = new ArrayList<>();
         Datos = datos.LeerDatos(); 
         // Se modifico el archivo txt original a fin de retirar las tildes ya que provocan error de lectura
-        map.SepararDatos(Datos);
         
 
         switch (key) {
             case 1:
-                map.HashMap();
+                map.HashMap(Datos);
                 break;
                 
             case 2:
-                map.TreeMap();
+                map.TreeMap(Datos);
                 break;
 
             case 3:
-                map.LinkedHashMap();
+                map.LinkedHashMap(Datos);
                 break;
 
             default:
@@ -48,11 +47,11 @@ public class HDT6 {
 
         }
 
-        // while (salir == false) {
+        while (salir == false) {
 
             
             
-        // }
+        }
 
         
         

@@ -6,7 +6,6 @@
 package com.mycompany.hdt6;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -23,23 +22,19 @@ public class HDT6 {
         int key = sc.nextInt();
         sc.nextLine();
         boolean salir = false;
-        ArrayList <String> Datos = new ArrayList<>();
-        Datos = datos.LeerDatos(); 
-        // Se modifico el archivo txt original a fin de retirar las tildes ya que provocan error de lectura
-        map.SepararDatos(Datos);
-        
+        datos.LeerDatos();
 
         switch (key) {
             case 1:
-                map.HashMap();
+                map.HashMap(datos);
                 break;
                 
             case 2:
-                map.TreeMap();
+                map.TreeMap(datos);
                 break;
 
             case 3:
-                map.LinkedHashMap();
+                map.LinkedHashMap(datos);
                 break;
 
             default:
@@ -48,11 +43,11 @@ public class HDT6 {
 
         }
 
-        // while (salir == false) {
+        while (salir == false) {
 
             
             
-        // }
+        }
 
         
         

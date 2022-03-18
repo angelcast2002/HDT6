@@ -6,7 +6,6 @@
 package com.mycompany.hdt6;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -23,11 +22,6 @@ public class HDT6 {
         int key = sc.nextInt();
         sc.nextLine();
         boolean salir = false;
-        ArrayList <String> Datos = new ArrayList<>();
-        Datos = datos.LeerDatos(); 
-        // Se modifico el archivo txt original a fin de retirar las tildes ya que provocan error de lectura
-        map.SepararDatos(Datos);
-        
 
         switch (key) {
             case 1:
@@ -45,17 +39,17 @@ public class HDT6 {
             default:
                 System.out.println("Ingrese un valor valido");
                 break;
-
+                
         }
 
-        // while (salir == false) {
+        while (salir == false) {
 
             
             
-        // }
+        }
 
         
-        
+        datos.LeerDatos();
         
     }
 }

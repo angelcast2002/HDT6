@@ -48,11 +48,11 @@ public class HDT6 {
 
         }
 
-        // while (salir == false) {
+        while (salir == false) {
 
             
             
-        // }
+        }
 
         
         
