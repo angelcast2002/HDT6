@@ -6,6 +6,8 @@
 package com.mycompany.hdt6;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -15,7 +17,45 @@ public class HDT6 {
 
     public static void main(String[] args) throws IOException {
         Datos datos = new Datos();
-        datos.LeerDatos();
-        int i = 0;
+        Scanner sc = new Scanner(System.in);
+        MAP map = new MAP();
+        System.out.println("Ingrese \n1 Para Hasmap\n2 Para TreeMap\n3 Para LinkedHashMap");
+        int key = sc.nextInt();
+        sc.nextLine();
+        boolean salir = false;
+        ArrayList <String> Datos = new ArrayList<>();
+        Datos = datos.LeerDatos(); 
+        // Se modifico el archivo txt original a fin de retirar las tildes ya que provocan error de lectura
+        map.SepararDatos(Datos);
+        
+
+        switch (key) {
+            case 1:
+                map.HashMap();
+                break;
+                
+            case 2:
+                map.TreeMap();
+                break;
+
+            case 3:
+                map.LinkedHashMap();
+                break;
+
+            default:
+                System.out.println("Ingrese un valor valido");
+                break;
+
+        }
+
+        // while (salir == false) {
+
+            
+            
+        // }
+
+        
+        
+        
     }
 }
