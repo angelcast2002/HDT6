@@ -19,6 +19,7 @@ public class MAP {
     private LinkedHashMap <String, ArrayList> ProductosLinked = new LinkedHashMap<String, ArrayList>();
     private TreeMap <String, ArrayList> ProductosTree = new TreeMap<String, ArrayList>();
     private ArrayList <String> ListaDatos = new ArrayList<>();
+    private int HashUtilizado = 0;
     // ArrayList <String> NombreProductos = new ArrayList<>();
 
     public void SepararDatos(ArrayList datos) {
@@ -46,26 +47,6 @@ public class MAP {
                 NombreProductos.add(value);
                 Productos.put(key, NombreProductos);
             } else {
-                /** 
-                for (String Clave : Productos.keySet()) {
-                    
-                    System.out.println("Clave: " + Clave + ", valor: " + NombreProductos);
-                    
-                    if (Clave.equals(key)) {
-                        NombreProductos = Productos.get(Clave);
-                        NombreProductos.add(value);
-                        Productos.put(key, NombreProductos);
-                        break;
-                        
-                    } else {
-                        NombreProductos.add(value);
-                        Productos.put(key, NombreProductos);
-                        break;
-                        
-                    }
-                    
-                }
-                */ //Otro for que no funciona
 
                 if (Productos.get(key) != null ) {
                     NombreProductos = Productos.get(key);
@@ -77,30 +58,7 @@ public class MAP {
                     Productos.put(key, NombreProductos);
                     
                 }
-                /** 
-                for (Map.Entry<String, ArrayList> m : Productos.entrySet()) {
-
-                    System.out.println(m.getKey() + " : " + m.getValue());
-
-                    if (m.getKey().equals(key)) {
-    
-                        NombreProductos = m.getValue();
-                        NombreProductos.add(value);
-                        Productos.put(key, NombreProductos);
-                        break;
-                    }
-    
-                    else {
-    
-                        NombreProductos.add(value);
-                        Productos.put(key, NombreProductos);
-                        break;
-                    }
-                    
-                    // System.out.println(m.getKey() + " : " + m.getValue());
-                    
-                }
-                */
+                
             }
             
             
@@ -190,4 +148,227 @@ public class MAP {
 
         
     }
+
+    public String NombreProducto(String nombre) {
+        String Mensaje = "No se ha encontrado el producto";
+        switch (HashUtilizado) {
+            case 1:
+                for(Map.Entry<String,ArrayList> m : Productos.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    for (String productos : nombreProductos) {
+                        if (productos.equals(nombre)){
+                            Mensaje = "Categoria " + m.getKey() + " : Producto " + productos;
+                        }
+                    }
+                }
+                break;
+        
+            case 2:
+                for(Map.Entry<String,ArrayList> m : ProductosTree.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    for (String productos : nombreProductos) {
+                        if (productos.equals(nombre)){
+                            Mensaje = "Categoria " + m.getKey() + " : Producto " + productos;
+                        }
+                    }
+                }
+                break;
+
+            case 3:
+                for(Map.Entry<String,ArrayList> m : ProductosLinked.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    for (String productos : nombreProductos) {
+                        if (productos.equals(nombre)){
+                            Mensaje = "Categoria " + m.getKey() + " : Producto " + productos;
+                        }
+                    }
+                }
+                break;
+        }
+        
+        return Mensaje;
+    }
+
+    public String DatosDelProducto() {
+        String Mensaje = "";
+        switch (HashUtilizado) {
+            case 1:
+                for(Map.Entry<String,ArrayList> m : Productos.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje = Mensaje + "\n" + "Categoria " + m.getKey() + " Contidad en categoria " + nombreProductos.size();
+                }
+                break;
+        
+            case 2:
+                for(Map.Entry<String,ArrayList> m : ProductosTree.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje = Mensaje + "\n" + "Categoria " + m.getKey() + " Contidad en categoria " + nombreProductos.size();
+                }
+                break;
+
+            case 3:
+                for(Map.Entry<String,ArrayList> m : ProductosLinked.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje = Mensaje + "\n" + "Categoria " + m.getKey() + " Contidad en categoria " + nombreProductos.size();
+                }
+                break;
+        }
+        return Mensaje;
+    }
+
+    public String DatosDelProductoConNombres() {
+        String Mensaje = "";
+        switch (HashUtilizado) {
+            case 1:
+                for(Map.Entry<String,ArrayList> m : Productos.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos "+ nombreProductos.size();
+                }
+                break;
+        
+            case 2:
+                for(Map.Entry<String,ArrayList> m : ProductosTree.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos "+ nombreProductos.size();
+                }
+                break;
+
+            case 3:
+                for(Map.Entry<String,ArrayList> m : ProductosLinked.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos "+ nombreProductos.size();
+                }
+                break;
+        }
+        return Mensaje;
+    }
+
+    public String MostrarTodo() {
+        String Mensaje = "";
+        switch (HashUtilizado) {
+            case 1:
+                for(Map.Entry<String,ArrayList> m : Productos.entrySet()){
+                    Mensaje = Mensaje + "\n" + m.getKey() + " : " + m.getValue();
+                }
+                break;
+            case 2:
+                for(Map.Entry<String,ArrayList> m : ProductosTree.entrySet()){
+                    Mensaje = Mensaje + "\n" + m.getKey() + " : " + m.getValue();
+                }
+                break;
+            case 3:
+                for(Map.Entry<String,ArrayList> m : ProductosLinked.entrySet()){
+                    Mensaje = Mensaje + "\n" + m.getKey() + " : " + m.getValue();
+                }
+                break;
+        }
+        
+        return Mensaje;
+    }
+
+    public String AgregarValor(String valor1, String valor2) {
+        String Mensaje = "Agregado con exito";
+        ArrayList <String> Valores = new ArrayList<>();
+        switch (HashUtilizado) {
+            case 1:
+                if (Productos.get(valor1) != null){
+                    Valores = Productos.get(valor1);
+                    Valores.add(valor2);
+                } else {
+                    Mensaje = "No se ha encontrado la categoria";
+                }
+                break;
+        
+            case 2:
+                if (ProductosTree.get(valor1) != null){
+                    Valores = ProductosTree.get(valor1);
+                    Valores.add(valor2);
+                } else {
+                    Mensaje = "No se ha encontrado la categoria";
+                }
+                break;
+
+            case 3:
+                if (ProductosLinked.get(valor1) != null){
+                    Valores = ProductosLinked.get(valor1);
+                    Valores.add(valor2);
+                } else {
+                    Mensaje = "No se ha encontrado la categoria";
+                }
+                break;
+        }
+        
+        return Mensaje;
+    }
+
+    /**
+     * @return HashMap<String, ArrayList> return the Productos
+     */
+    public HashMap<String, ArrayList> getProductos() {
+        return Productos;
+    }
+
+    /**
+     * @param Productos the Productos to set
+     */
+    public void setProductos(HashMap<String, ArrayList> Productos) {
+        this.Productos = Productos;
+    }
+
+    /**
+     * @return LinkedHashMap <String, ArrayList> return the ProductosLinked
+     */
+    public LinkedHashMap <String, ArrayList> getProductosLinked() {
+        return ProductosLinked;
+    }
+
+    /**
+     * @param ProductosLinked the ProductosLinked to set
+     */
+    public void setProductosLinked(LinkedHashMap <String, ArrayList> ProductosLinked) {
+        this.ProductosLinked = ProductosLinked;
+    }
+
+    /**
+     * @return TreeMap <String, ArrayList> return the ProductosTree
+     */
+    public TreeMap <String, ArrayList> getProductosTree() {
+        return ProductosTree;
+    }
+
+    /**
+     * @param ProductosTree the ProductosTree to set
+     */
+    public void setProductosTree(TreeMap <String, ArrayList> ProductosTree) {
+        this.ProductosTree = ProductosTree;
+    }
+
+    /**
+     * @return ArrayList <String> return the ListaDatos
+     */
+    public ArrayList <String> getListaDatos() {
+        return ListaDatos;
+    }
+
+    /**
+     * @param ListaDatos the ListaDatos to set
+     */
+    public void setListaDatos(ArrayList <String> ListaDatos) {
+        this.ListaDatos = ListaDatos;
+    }
+
+    /**
+     * @return int return the HashUtilizado
+     */
+    public int getHashUtilizado() {
+        return HashUtilizado;
+    }
+
+    /**
+     * @param HashUtilizado the HashUtilizado to set
+     */
+    public void setHashUtilizado(int HashUtilizado) {
+        this.HashUtilizado = HashUtilizado;
+    }
+
 }
