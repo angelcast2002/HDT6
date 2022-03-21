@@ -7,8 +7,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Angel
+ */
 public class Datos {
    
+    /**
+     *
+     * @return
+     * @throws IOException
+     * @throws FileNotFoundException
+     */
     public static ArrayList LeerDatos()throws IOException, FileNotFoundException{
         ArrayList <String> Datos = new ArrayList<>();
         String cadena;

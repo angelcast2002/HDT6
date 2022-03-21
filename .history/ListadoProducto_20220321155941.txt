@@ -10,20 +10,3 @@ Bebidas-Cerveza tibetana Barley
 Bebidas-Te frios
 Bebidas-Coca cola 1 litro
 Bebidas-Coca cola 2 litros
-Condimentos-Sirope de regaliz
-Condimentos-Especies Cajun del chef
-Condimentos-Mezcla Gumbo del chef
-Frutas-Peras secas
-Frutas-Pasas
-Frutas-Manzana roja
-Frutas-Manzana verde
-Carnes-Res
-Carnes-Pollo
-Carnes-Cerdo
-Carnes-Camarones
-Carnes-Pescados
-Lacteos-Queso de cabra
-Lacteos-Queso Manchego 
-Lacteos-Leche descremada
-Lacteos-Leche deslactosada
-Lacteos-Leche entera

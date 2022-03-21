@@ -11,6 +11,12 @@ package com.mycompany.hdt6;
  * @param <T>
  */
 public interface MapInterface<T> {
+
+    /**
+     *
+     * @param a
+     * @return
+     */
     public Gen<T> Selecion(Integer a);
     
 }

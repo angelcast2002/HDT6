@@ -15,11 +15,6 @@ import java.util.Scanner;
  */
 public class HDT6 {
 
-    /**
-     *
-     * @param args
-     * @throws IOException
-     */
     public static void main(String[] args) throws IOException {
         Datos datos = new Datos();
         Scanner sc = new Scanner(System.in);
@@ -32,26 +27,32 @@ public class HDT6 {
         Datos = datos.LeerDatos(); 
         // Se modifico el archivo txt original a fin de retirar las tildes ya que provocan error de lectura
         map.SepararDatos(Datos);
-        
-        map.setHashUtilizado(key);
-        switch (key) {
-            case 1:
-                map.HashMap();
-                break;
-                
-            case 2:
-                map.TreeMap();
-                break;
-
-            case 3:
-                map.LinkedHashMap();
-                break;
-
-            default:
-                System.out.println("Ingrese un valor valido");
-                break;
-
+        while (salir == false) {
+            System.out.println("Ingrese \n1 Para Hasmap\n2 Para TreeMap\n3 Para LinkedHashMap");
+            key = sc.nextInt();
+            sc.nextLine();
+            map.setHashUtilizado(key);
+            switch (key) {
+                case 1:
+                    map.HashMap();
+                    break;
+                    
+                case 2:
+                    map.TreeMap();
+                    break;
+    
+                case 3:
+                    map.LinkedHashMap();
+                    break;
+    
+                default:
+                    System.out.println("Ingrese un valor valido");
+                    salir = true;
+                    break;
+    
+            }
         }
+       
 
         while (salir == false) {
             System.out.println("Que desea hacer?");

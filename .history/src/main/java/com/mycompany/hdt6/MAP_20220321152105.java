@@ -22,10 +22,6 @@ public class MAP {
     private int HashUtilizado = 0;
     // ArrayList <String> NombreProductos = new ArrayList<>();
 
-    /**
-     *
-     * @param datos
-     */
     public void SepararDatos(ArrayList datos) {
         
         for (int i = 0; i < datos.size(); i++) {
@@ -42,9 +38,6 @@ public class MAP {
         }
     }
 
-    /**
-     *
-     */
     public void HashMap() {
         for (int i = 0; i < ListaDatos.size(); i++) {
             ArrayList <String> NombreProductos = new ArrayList<>();
@@ -83,9 +76,7 @@ public class MAP {
         
     }
     
-    /**
-     *
-     */
+
     public void TreeMap() {
         for (int i = 0; i < ListaDatos.size(); i++) {
             ArrayList <String> NombreProductos = new ArrayList<>();
@@ -122,9 +113,6 @@ public class MAP {
         
     }
 
-    /**
-     *
-     */
     public void LinkedHashMap() {
         for (int i = 0; i < ListaDatos.size(); i++) {
             ArrayList <String> NombreProductos = new ArrayList<>();
@@ -161,11 +149,6 @@ public class MAP {
         
     }
 
-    /**
-     *
-     * @param nombre
-     * @return
-     */
     public String NombreProducto(String nombre) {
         String Mensaje = "No se ha encontrado el producto";
         switch (HashUtilizado) {
@@ -206,10 +189,6 @@ public class MAP {
         return Mensaje;
     }
 
-    /**
-     *
-     * @return
-     */
     public String DatosDelProducto() {
         String Mensaje = "";
         switch (HashUtilizado) {
@@ -237,10 +216,6 @@ public class MAP {
         return Mensaje;
     }
 
-    /**
-     *
-     * @return
-     */
     public String DatosDelProductoConNombres() {
         String Mensaje = "";
         switch (HashUtilizado) {
@@ -268,10 +243,6 @@ public class MAP {
         return Mensaje;
     }
 
-    /**
-     *
-     * @return
-     */
     public String MostrarTodo() {
         String Mensaje = "";
         switch (HashUtilizado) {
@@ -295,12 +266,6 @@ public class MAP {
         return Mensaje;
     }
 
-    /**
-     *
-     * @param valor1
-     * @param valor2
-     * @return
-     */
     public String AgregarValor(String valor1, String valor2) {
         String Mensaje = "Agregado con exito";
         ArrayList <String> Valores = new ArrayList<>();

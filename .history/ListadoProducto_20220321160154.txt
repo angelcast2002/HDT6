@@ -17,13 +17,3 @@ Frutas-Peras secas
 Frutas-Pasas
 Frutas-Manzana roja
 Frutas-Manzana verde
-Carnes-Res
-Carnes-Pollo
-Carnes-Cerdo
-Carnes-Camarones
-Carnes-Pescados
-Lacteos-Queso de cabra
-Lacteos-Queso Manchego 
-Lacteos-Leche descremada
-Lacteos-Leche deslactosada
-Lacteos-Leche entera

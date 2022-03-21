@@ -22,10 +22,6 @@ public class MAP {
     private int HashUtilizado = 0;
     // ArrayList <String> NombreProductos = new ArrayList<>();
 
-    /**
-     *
-     * @param datos
-     */
     public void SepararDatos(ArrayList datos) {
         
         for (int i = 0; i < datos.size(); i++) {
@@ -42,9 +38,6 @@ public class MAP {
         }
     }
 
-    /**
-     *
-     */
     public void HashMap() {
         for (int i = 0; i < ListaDatos.size(); i++) {
             ArrayList <String> NombreProductos = new ArrayList<>();
@@ -83,9 +76,7 @@ public class MAP {
         
     }
     
-    /**
-     *
-     */
+
     public void TreeMap() {
         for (int i = 0; i < ListaDatos.size(); i++) {
             ArrayList <String> NombreProductos = new ArrayList<>();
@@ -122,9 +113,6 @@ public class MAP {
         
     }
 
-    /**
-     *
-     */
     public void LinkedHashMap() {
         for (int i = 0; i < ListaDatos.size(); i++) {
             ArrayList <String> NombreProductos = new ArrayList<>();
@@ -161,11 +149,6 @@ public class MAP {
         
     }
 
-    /**
-     *
-     * @param nombre
-     * @return
-     */
     public String NombreProducto(String nombre) {
         String Mensaje = "No se ha encontrado el producto";
         switch (HashUtilizado) {
@@ -206,10 +189,6 @@ public class MAP {
         return Mensaje;
     }
 
-    /**
-     *
-     * @return
-     */
     public String DatosDelProducto() {
         String Mensaje = "";
         switch (HashUtilizado) {
@@ -237,41 +216,76 @@ public class MAP {
         return Mensaje;
     }
 
-    /**
-     *
-     * @return
-     */
     public String DatosDelProductoConNombres() {
         String Mensaje = "";
+        Integer Cuenta = null;
+        HashMap <String, Integer> NumeroDeObjetos = new HashMap<>();
+        TreeMap <String, Integer> NumeroDeObjetos2 = new TreeMap<>();
+        LinkedHashMap <String, Integer> NumeroDeObjetos3 = new LinkedHashMap<>();
         switch (HashUtilizado) {
             case 1:
+                Cuenta = 0;
                 for(Map.Entry<String,ArrayList> m : Productos.entrySet()){
                     ArrayList<String> nombreProductos = m.getValue();
-                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos "+ nombreProductos.size();
+                    for (String a : nombreProductos) {
+                        if (NumeroDeObjetos.get(a) != null) {
+                            Cuenta = Cuenta + 1;
+                            NumeroDeObjetos.put(a, Cuenta);
+                        }
+                        else{
+                            NumeroDeObjetos.put(a, Cuenta);
+                        }
+                    }
+                }
+                for(Map.Entry<String,ArrayList> m : Productos.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos iguales " +  NumeroDeObjetos.get(m.getValue()) + " Cantidad de productos en la categoria "+ nombreProductos.size();
                 }
                 break;
         
             case 2:
+                Cuenta = 0;
                 for(Map.Entry<String,ArrayList> m : ProductosTree.entrySet()){
                     ArrayList<String> nombreProductos = m.getValue();
-                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos "+ nombreProductos.size();
+                    for (String a : nombreProductos) {
+                        if (NumeroDeObjetos2.get(a) != null) {
+                            Cuenta = Cuenta + 1;
+                            NumeroDeObjetos2.put(a, Cuenta);
+                        }
+                        else{
+                            NumeroDeObjetos2.put(a, Cuenta);
+                        }
+                    }
+                }
+                for(Map.Entry<String,ArrayList> m : ProductosTree.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos iguales " +  NumeroDeObjetos2.get(m.getValue()) + " Cantidad de productos en la categoria "+ nombreProductos.size();
                 }
                 break;
 
             case 3:
+                Cuenta = 0;
                 for(Map.Entry<String,ArrayList> m : ProductosLinked.entrySet()){
                     ArrayList<String> nombreProductos = m.getValue();
-                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos "+ nombreProductos.size();
+                    for (String a : nombreProductos) {
+                        if (NumeroDeObjetos3.get(a) != null) {
+                            Cuenta = Cuenta + 1;
+                            NumeroDeObjetos3.put(a, Cuenta);
+                        }
+                        else{
+                            NumeroDeObjetos3.put(a, Cuenta);
+                        }
+                    }
+                }
+                for(Map.Entry<String,ArrayList> m : ProductosLinked.entrySet()){
+                    ArrayList<String> nombreProductos = m.getValue();
+                    Mensaje =Mensaje + "\n" + " Categoria " + m.getKey() + " : Producto " + m.getValue() + " Cantidad de productos iguales " +  NumeroDeObjetos3.get(m.getValue()) + " Cantidad de productos en la categoria "+ nombreProductos.size();
                 }
                 break;
         }
         return Mensaje;
     }
 
-    /**
-     *
-     * @return
-     */
     public String MostrarTodo() {
         String Mensaje = "";
         switch (HashUtilizado) {
@@ -295,12 +309,6 @@ public class MAP {
         return Mensaje;
     }
 
-    /**
-     *
-     * @param valor1
-     * @param valor2
-     * @return
-     */
     public String AgregarValor(String valor1, String valor2) {
         String Mensaje = "Agregado con exito";
         ArrayList <String> Valores = new ArrayList<>();
